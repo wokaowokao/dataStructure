@@ -18,7 +18,7 @@ public class LinkedTable {
     }
 
     @Override
-    public String  toString() {
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         if (next == null) {
@@ -33,4 +33,44 @@ public class LinkedTable {
         }
         return stringBuilder.toString();
     }
+    int getLength(){
+        int length = 0;
+        Node temp = this.next;
+        while (temp != null){
+            length ++;
+            temp = temp.next;
+        }
+        return  length;
+    }
+    boolean remove(int index){
+
+        if(getLength() == 0 || index < 1 || index > getLength()){
+            return false;
+        }
+        //remove 1   index < length() this.next = this.next.next;
+        // remove 1   index == length() this.next = null;
+
+        // next->node1->node2  lenght 2
+        // index 1
+        //temp node1
+        //i 1
+        Node temp = this.next;
+        int i = 1;
+        while (temp != null){
+            if(i == index){
+                if (index == getLength()){
+                    temp = null;
+                }else{
+                    temp = temp.next;
+                }
+                return true;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return true;
+    }
+
+
+
 }

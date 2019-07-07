@@ -6,7 +6,10 @@ public class Main {
         LinkedTable linkedTable = new LinkedTable();
         linkedTable.addNode(1);
         linkedTable.addNode(2);
-        linkedTable.addNode(3);
+        /*linkedTable.addNode(2);
+        linkedTable.addNode(3);*/
+        boolean remove = linkedTable.remove(1);
         System.out.println(linkedTable.toString());
+        System.out.println(linkedTable.getLength());
     }
 }
