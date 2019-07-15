@@ -54,21 +54,30 @@ public class LinkedTable {
         // index 1
         //temp node1
         //i 1
-        Node temp = this.next;
-        int i = 1;
-        while (temp != null){
+
+        if(index == 1){
+            next = next.next;
+            return true;
+        }
+
+        //index > 1
+        int i = 2;
+
+        Node preNode = next;
+        Node curNode = next.next;
+
+        //2  node node
+
+        while (curNode != null){
             if(i == index){
-                if (index == getLength()){
-                    temp = null;
-                }else{
-                    temp = temp.next;
-                }
+                preNode.next = curNode.next;
                 return true;
             }
-            temp = temp.next;
+            preNode = preNode.next;
+            curNode = curNode.next;
             i++;
         }
-        return true;
+        return false;
     }
 
 
