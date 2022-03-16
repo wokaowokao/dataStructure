@@ -34,8 +34,7 @@ public class TestNode {
             nodes.push(test);
             test = test.getNext();
         }
-        while
-        nodes.pop().getValue()
+
 
     }
 
